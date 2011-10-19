@@ -6,3 +6,11 @@ Maktoub.logo = "logo.jpg"
 Maktoub.home_url = "http://example.com"
 Maktoub.app_name = "Dummy application"
 
+Maktoub.subscribers_extractor do
+  users = []
+  (1..5).each do |i|
+    users << {name: "tester#{i}", email: "test#{i}@example.com"}
+  end
+  users
+end
+
