@@ -380,7 +380,7 @@
 
                                             	<!-- // Begin Module: Standard Header Image \\ -->
                                             	<% img = image_tag Maktoub.logo, :style => "max-width:600px", :id => "headerImage campaign-icon", :alt => Maktoub.app_name %>
-                                            	<%= link_to img, Maktoub.home_url %>
+                                            	<%= link_to img, Maktoub.home_url, :target => "_blank" %>
                                             	<!-- // End Module: Standard Header Image \\ -->
                                               <hr />
                                             </td>
@@ -435,7 +435,7 @@
                                                             <div mc:edit="std_footer">
 																<em>Copyright &copy; <%= Time.now.year %> Sandglaz, All rights reserved.</em>
 																<br />
-																<em>You are receiving this email because you opted in at our website <%= link_to Maktoub.home_url, Maktoub.home_url %>.</em>
+																<em>You are receiving this email because you opted in at our website <%= link_to Maktoub.home_url, Maktoub.home_url, :target => "_blank" %>.</em>
 																<br />
 																<%- unless @archive %>
 																  <%# we are not including mailing addresses %>
