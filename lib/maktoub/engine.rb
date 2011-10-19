@@ -3,3 +3,4 @@ module Maktoub
     isolate_namespace Maktoub
   end
 end
+
