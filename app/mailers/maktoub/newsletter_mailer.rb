@@ -19,7 +19,7 @@ module Maktoub
 
       premailer = Premailer.new(render("maktoub/newsletters/#{newsletter_name}").to_s,
                         with_html_string: true,
-                        link_query_string: CGI::escape("?utm_source=newsletter&utm_medium=email&utm_campaign=#{@subject}")
+                        link_query_string: CGI::escape("utm_source=newsletter&utm_medium=email&utm_campaign=#{@subject}")
                       )
 
       mail(mail_fields) do |format|
