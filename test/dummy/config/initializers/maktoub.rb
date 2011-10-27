@@ -5,7 +5,7 @@ Maktoub.twitter_url = "http://twitter.com/#!/twitter"
 Maktoub.facebook_url = "http://www.facebook.com/facebook"
 Maktoub.subscription_preferences_url = "http://example.com/manage_subscriptions"
 Maktoub.logo = "logo.jpg"
-Maktoub.home_url = "http://example.com"
+Maktoub.home_domain = "example.com"
 Maktoub.app_name = "Dummy application"
 
 Maktoub.subscribers_extractor do

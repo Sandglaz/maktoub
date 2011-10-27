@@ -5,6 +5,8 @@ module Maktoub
     default from: Maktoub.from,
           parts_order: [ "text/html", "text/plain" ]
 
+    default_url_options[:host] = Maktoub.home_domain
+
     def publish(newsletter_name, params)
       @name = params[:name]
       @subject = newsletter_name.humanize

@@ -31,5 +31,15 @@ class MaktoubTest < ActiveSupport::TestCase
     Maktoub.name_field = :first_name
     assert_equal :first_name, Maktoub.name_field
   end
+
+  test "configuration fields" do
+    assert_respond_to Maktoub, :from
+    assert_respond_to Maktoub, :twitter_url
+    assert_respond_to Maktoub, :facebook_url
+    assert_respond_to Maktoub, :subscription_preferences_url
+    assert_respond_to Maktoub, :logo
+    assert_respond_to Maktoub, :home_domain
+    assert_respond_to Maktoub, :app_name
+  end
 end
 

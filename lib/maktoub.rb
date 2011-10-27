@@ -7,7 +7,7 @@ module Maktoub
                   :facebook_url,
                   :subscription_preferences_url,
                   :logo,
-                  :home_url,
+                  :home_domain,
                   :app_name
 
     attr_writer :email_field, :name_field
@@ -26,6 +26,10 @@ module Maktoub
 
     def subscribers_extractor (&block)
       @subscribers = Proc.new block
+    end
+
+    def home_url
+      "http://" + home_domain
     end
   end
 end

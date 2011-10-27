@@ -354,11 +354,12 @@
                                                 	 <%= yield(:teaser) %>
                                                 </div>
                                             </td>
+
                                             <%- unless @archive %>
     											                     <td valign="top" width="190">
                                             	<div>
                                             	  <%= @template %>
-                                                	Is this email not displaying correctly?<br /><%= link_to "View it in your browser", "#{Maktoub.home_url}/maktoub/newsletter/#{@newsletter_name}", target: "_blank" %>.
+                                                	Is this email not displaying correctly?<br /><%= link_to "View it in your browser", newsletter_url(@newsletter_name), target: "_blank" %>.
                                                 </div>
                                             </td>
                     											<%- end %>
