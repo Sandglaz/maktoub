@@ -9,7 +9,7 @@ module Maktoub
 
     def publish(newsletter_name, params)
       @name = params[:name]
-      @subject = newsletter_name.humanize
+      @subject = newsletter_name.humanize.titleize
       @email = params[:email]
       @newsletter_name = newsletter_name
       mail_fields = {

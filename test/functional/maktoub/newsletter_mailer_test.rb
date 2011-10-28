@@ -7,7 +7,7 @@ module Maktoub
 
     end
     test "should have the right subject recipient and sender" do
-      assert_equal "Test template", @mailer.subject
+      assert_equal "Test Template", @mailer.subject
       assert_equal ['maktoub@example.com'], @mailer.from # defined in dummy/config/initializers/maktoub.rb
       assert_equal ['zaid@example.com'], @mailer.to
     end
