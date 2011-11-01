@@ -42,8 +42,6 @@ In config initializers create a maktoub.rb file and configure your settings. Exa
 Create a newsletter as a normal view partial in app/views/maktoub/newsletters/. 
 The subject of the newsletter will be automatically deduced from the partial's name.
 
-== 
-
 
 === View in browser
 To be able to view your newsletter in a browser add it to routes.rb.
