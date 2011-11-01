@@ -1,3 +1,12 @@
 = Maktoub
 
-This project rocks and uses MIT-LICENSE.
+Maktoub is a Ruby on Rails engine for authoring newsletters.
+
+== Installation
+
+  # Add this line to your Gemfile
+  gem 'maktoub', :git => 'git://github.com/Sandglaz/maktoub.git'
+
+Then 'bundle install'
+
+== Usage
