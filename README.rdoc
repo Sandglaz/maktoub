@@ -26,7 +26,7 @@ In config initializers create a maktoub.rb file and configure your settings. Exa
   Maktoub.app_name = "Maktoub" # your app name
 
   # pass a block to subscribers_extractor that returns an object that  reponds to :name and :email 
-  # (fields can be configure as shown below)
+  # (fields can be configured as shown below)
   require "ostruct"
   Maktoub.subscribers_extractor do
     users = []
@@ -48,9 +48,13 @@ The subject of the newsletter will be automatically deduced from the partial's n
 === Sending messages
 Maktoub comes with two rake tasks to allow you to:
 * send a test message to the "from" address of your newsletter.
+
   rake maktoub:test['name_of_my_newsletter_partial']
+
 * publish the newsletter to all your subscribers. If you have delayed_job installed then it will use it to deliver each email as a background job
+
   rake maktoub:mail['name_of_my_newsletter_parial']
+
 
 Alternatively you have access to a Maktoub::NewsletterMailer ActionMailer object with a publish method
   Maktoub::NewsletterMail.publish('my_newsletter_partial', :name => 'User name', :email => 'user@example.com')
