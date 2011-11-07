@@ -8,7 +8,7 @@ Maktoub is a Ruby on Rails engine for email newsletters.
 == Installation
 
   # Add this line to your Gemfile
-  gem 'maktoub', :git => 'git://github.com/Sandglaz/maktoub.git'
+  gem 'maktoub'
 
 Then 'bundle install'
 
