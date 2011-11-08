@@ -1,0 +1,3 @@
+Description:
+  The maktoub:install generator creates a configuration file in config/initializer
+  directory.
