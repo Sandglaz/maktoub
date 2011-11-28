@@ -44,4 +44,7 @@ To be able to view your newsletter in a browser add it to routes.rb.
   # you would access the newsletter at: http://example.com/newsletter/my_awesome_newletter
   mount Maktoub::Engine => "/"
 
+== Contributing
+Send a pull request including documentation changes and tests. 
+
 
