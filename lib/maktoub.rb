@@ -5,6 +5,7 @@ module Maktoub
     attr_accessor :from,
                   :twitter_url,
                   :facebook_url,
+                  :google_plus_url,
                   :subscription_preferences_url,
                   :logo,
                   :home_domain,
