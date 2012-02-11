@@ -26,7 +26,7 @@ module Maktoub
     end
 
     def subscribers_extractor (&block)
-      @subscribers = Proc.new block
+      @subscribers = Proc.new &block
     end
 
     def home_url
