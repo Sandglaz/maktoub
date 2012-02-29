@@ -1,10 +1,10 @@
 PATH
   remote: .
   specs:
-    maktoub (0.0.1)
+    maktoub (0.1.0)
       nokogiri
       premailer
-      rails (~> 3.1.1)
+      rails (>= 3.1.1)
 
 GEM
   remote: http://rubygems.org/
@@ -37,14 +37,15 @@ GEM
       activesupport (= 3.1.1)
     activesupport (3.1.1)
       multi_json (~> 1.0)
-    addressable (2.2.6)
-    arel (2.2.1)
+    addressable (2.2.7)
+    arel (2.2.3)
     builder (3.0.0)
-    css_parser (1.2.5)
+    css_parser (1.2.6)
       addressable
+      rdoc
     erubis (2.7.0)
     hike (1.2.1)
-    htmlentities (4.3.0)
+    htmlentities (4.3.1)
     i18n (0.6.0)
     jquery-rails (1.0.16)
       railties (~> 3.0)
@@ -54,10 +55,10 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mime-types (1.16)
+    mime-types (1.17.2)
     multi_json (1.0.3)
     nokogiri (1.5.0)
-    polyglot (0.3.2)
+    polyglot (0.3.3)
     premailer (1.7.3)
       css_parser (>= 1.1.9)
       htmlentities (>= 4.0.0)
@@ -98,7 +99,7 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.30)
+    tzinfo (0.3.31)
 
 PLATFORMS
   ruby
