@@ -24,6 +24,11 @@ Follow instructions inside the file to configure it the way you want.
 Create a newsletter as a normal view partial in app/views/maktoub/newsletters/.
 The subject of the newsletter will be automatically deduced from the partial's name.
 
+=== Editing Styles
+
+Create a view partial in app/views/layouts/maktoub/_styles.erb. Note that this completely overrides the styles that come with maktoub. 
+You can copy the built-in styles and override them.
+
 === Sending messages
 Maktoub comes with two rake tasks to allow you to:
 * send a test message to the "from" address of your newsletter.
