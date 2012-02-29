@@ -13,6 +13,7 @@ module Maktoub
     test "should render the passed template" do
       get :show, :newsletter => 'test_template', :use_route => 'maktoub'
       assert_template 'newsletters/test_template'
+      assert_equal 'Test Template', assigns(:subject)
     end
 
     test "should use the newsletter_mailer layout" do

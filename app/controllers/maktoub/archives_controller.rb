@@ -3,9 +3,10 @@ module Maktoub
     layout 'maktoub/newsletter_mailer'
     def show
       @archive = true
-      @subject = params[:newsletter] || 'readme'
+      template = params[:newsletter] || 'readme'
+      @subject = template.titleize
 
-      render "maktoub/newsletters/#{@subject}"
+      render "maktoub/newsletters/#{template}"
     end
 
   end
