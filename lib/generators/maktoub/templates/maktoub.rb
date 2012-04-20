@@ -5,17 +5,16 @@
 # Maktoub.logo = "logo.jpg" # path to your logo asset
 # Maktoub.home_domain = "example.com" # your domain
 # Maktoub.app_name = "Maktoub" # your app name
+# Maktoub.unsubscribe_method = "unsubscribe" # method to call from unsubscribe link (doesn't include link by default)
 
 # pass a block to subscribers_extractor that returns an object that  reponds to :name and :email
 # (fields can be configured as shown below)
 
 # require "ostruct"
 # Maktoub.subscribers_extractor do
-#   users = []
-#   (1..5).each do |i|
+#   (1..5).map do |i|
 #     users << OpenStruct.new({name: "tester#{i}", email: "test#{i}@example.com"})
 #   end
-#   return users
 # end
 
 # uncomment lines below to change subscriber fields that contain email and
