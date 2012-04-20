@@ -9,7 +9,8 @@ module Maktoub
                   :subscription_preferences_url,
                   :logo,
                   :home_domain,
-                  :app_name
+                  :app_name, 
+                  :unsubscribe_method
 
     attr_writer :email_field, :name_field
 
@@ -27,6 +28,15 @@ module Maktoub
 
     def subscribers_extractor (&block)
       @subscribers = Proc.new &block
+    end
+    
+    def unsubscribe(email)
+      subscribers.select do |s| 
+        s.send(email_field) == email     
+      end.each do |s|
+        subscribers.delete s
+        s.send(unsubscribe_method) if unsubscribe_method
+      end
     end
 
     def home_url
