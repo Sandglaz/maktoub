@@ -39,5 +39,10 @@ describe Maktoub::SubscribersController do
 			put :update, :use_route => 'maktoub', :email => 'subscriber2@example.com'
 			response.should render_template 'subscribers/update'
 		end
+		
+		it "should require an email" do
+			put :update, :use_route => 'maktoub'
+			response.status.should == 400
+		end
 	end
 end

@@ -4,7 +4,10 @@
 	<p>
 	<%= label :subscribers, 'Email', :for => 'email' %>
 	<br/>
-	<%= text_field :subscribers, 'email', {:type => "email", :id => 'email'} %>
+	<%- if @message %>
+		<div style="color:red;"><%= @message %></div>
+	<%- end %>
+	<%= text_field :subscribers, 'email', {:type => "email", :id => 'email', :name => 'email'} %>
 	<br />
 	</p>
 	<p>

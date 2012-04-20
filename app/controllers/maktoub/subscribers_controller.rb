@@ -6,7 +6,12 @@ module Maktoub
 		end
 		
 		def update
-			Maktoub.unsubscribe params[:email]
+			if params[:email].blank?
+				@message = "email is required"
+				render :edit, :status => 400
+			else
+				Maktoub.unsubscribe params[:email]
+			end
 		end
 
 	end
