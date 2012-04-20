@@ -12,21 +12,13 @@ describe Maktoub do
     Maktoub.subscribers.length.should == 2
   end
   
-  it "unsubscribe_method undefined" do
+  it "unsubscribe_method" do
     users = (1..3).map do |i| OpenStruct.new({ :name => "hello #{i}", :email => "hello#{i}@example.com"}) end
     Maktoub.subscribers_extractor { users }
+    Maktoub.unsubscribe_method = :dummy_unsubscribe
     Maktoub.subscribers.length.should == 3
+    OpenStruct.any_instance.should_receive(:dummy_unsubscribe)
     Maktoub.unsubscribe "hello2@example.com"
-    Maktoub.subscribers.length.should == 2
-  end
-  
-  it "unsubscribe_method set" do
-    users = (1..3).map do |i| OpenStruct.new({ :name => "hello #{i}", :email => "hello#{i}@example.com"}) end
-    Maktoub.subscribers_extractor { users }
-    Maktoub.unsubscribe_method = :dummy_key
-    Maktoub.subscribers.length.should == 3
-    Maktoub.unsubscribe "hello2@example.com"
-    Maktoub.subscribers.length.should == 2
   end
 
   it "email_field default value" do

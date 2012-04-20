@@ -5,10 +5,19 @@
   <%= stylesheet_link_tag    "maktoub/application" %>
   <%= javascript_include_tag "maktoub/application" %>
   <%= csrf_meta_tags %>
+  <style type="text/css">
+    <%= render 'layouts/maktoub/styles' %>
+    div.container {
+      width: 600px;
+      margin: auto;
+      margin-top: 50px;
+    }
+  </style>
 </head>
 <body>
-
-<%= yield %>
+  <div class="container">
+  <%= yield %>
+  </div>
 
 </body>
 </html>

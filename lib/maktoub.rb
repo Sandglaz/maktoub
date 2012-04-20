@@ -34,7 +34,6 @@ module Maktoub
       subscribers.select do |s| 
         s.send(email_field) == email     
       end.each do |s|
-        subscribers.delete s
         s.send(unsubscribe_method) if unsubscribe_method
       end
     end

@@ -1,0 +1,13 @@
+<h1>Unsubscribe from newsletter</h1>
+
+<%= form_tag subscribers_path, :method => :put do |f| %>
+	<p>
+	<%= label :subscribers, 'Email', :for => 'email' %>
+	<br/>
+	<%= text_field :subscribers, 'email', {:type => "email", :id => 'email'} %>
+	<br />
+	</p>
+	<p>
+	<%= button_tag 'submit', :type => 'submit' %>
+	</o>
+<% end %>
