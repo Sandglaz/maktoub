@@ -12,15 +12,18 @@ namespace :maktoub do
 
   desc "send :newsletter to all subscribers"
   task :mail, [:newsletter] => [:environment] do |t, args|
-    Maktoub.subscribers.each do |u|
+    puts "starting..."
+    messages = Maktoub.subscribers.map do |u|
       if Maktoub::NewsletterMailer.method_defined? :delay
         Maktoub::NewsletterMailer.delay(:priority => -5).publish(args[:newsletter], :email => u.send(Maktoub.email_field), :name => u.send(Maktoub.name_field))
-        puts "delayed #{u.send Maktoub.email_field}"
+        "delayed #{u.send Maktoub.email_field}"
       else
         Maktoub::NewsletterMailer.publish(args[:newsletter], :email => u.send(Maktoub.email_field), :name => u.send(Maktoub.name_field)).deliver
-        puts "delivered #{u.send Maktoub.email_field}"
+        "delivered #{u.send Maktoub.email_field}"
       end
     end
+    puts "#{messages.length} messages"
+    puts messages.join("\n")
   end
 end
 
