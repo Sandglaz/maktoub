@@ -1,5 +1,6 @@
 module Maktoub
 	class SubscribersController < ApplicationController
+		layout 'maktoub/application'
 
 		def edit
 		
