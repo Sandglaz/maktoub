@@ -8,8 +8,7 @@ Gem::Specification.new do |s|
   s.name        = "maktoub"
   s.version     = Maktoub::VERSION
   s.authors     = ["Zaid Zawaideh"]
-  #s.email       = ["TODO: Your email"]
-  s.homepage    = "http://sandglaz.com"
+  s.homepage    = "http://www.sandglaz.com"
   s.summary     = "A simple newsletter engine for rails."
   s.description = "A simple newsletter engine for rails."
 
@@ -19,7 +18,6 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", ">= 3.1.1"
   s.add_dependency "premailer"
   s.add_dependency "nokogiri"
-  # s.add_dependency "jquery-rails"
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "rspec-rails"
