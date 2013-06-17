@@ -3,7 +3,7 @@ module Maktoub
 		layout 'maktoub/application'
 
 		def edit
-		
+			@email = params[:email]
 		end
 		
 		def update

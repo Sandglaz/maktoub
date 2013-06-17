@@ -7,7 +7,7 @@
 	<%- if @message %>
 		<div style="color:red;"><%= @message %></div>
 	<%- end %>
-	<%= text_field :subscribers, 'email', {:type => "email", :id => 'email', :name => 'email'} %>
+	<%= text_field :subscribers, 'email', {:type => "email", :id => 'email', :name => 'email', :value => @email} %>
 	<br />
 	</p>
 	<p>
