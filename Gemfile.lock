@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    maktoub (0.2.5)
+    maktoub (0.3.0)
       nokogiri
       premailer
       rails (>= 3.1.1)
