@@ -6,6 +6,7 @@ module Maktoub
                   :twitter_url,
                   :facebook_url,
                   :google_plus_url,
+                  :linkedin_url,
                   :subscription_preferences_url,
                   :logo,
                   :home_domain,
