@@ -1,6 +1,7 @@
 # Maktoub.from = "Test Sender <maktoub@example.com>" # the email the newsletter is sent from
 # Maktoub.twitter_url = "http://twitter.com/#!/twitter" # your twitter page
-# Maktoub.facebook_url = "http://www.facebook.com/facebook" # your facebook oage
+# Maktoub.facebook_url = "http://www.facebook.com/facebook" # your facebook page
+# Maktoub.linkedin_url = "http://www.linkedin.com/company/linkedin" # your linkedin page
 # Maktoub.subscription_preferences_url = "http://example.com/manage_subscriptions" #subscribers management url
 # Maktoub.logo = "logo.jpg" # path to your logo asset
 # Maktoub.home_domain = "example.com" # your domain
