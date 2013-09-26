@@ -104,15 +104,19 @@
                                                             <div mc:edit="std_social">
                                                                 &nbsp;
                                                                 <% unless Maktoub.twitter_url.blank? %>
-                                                                  <%= link_to 'follow on Twitter', Maktoub.twitter_url, :target => "_blank" %>
+                                                                  <%= link_to 'Twitter', Maktoub.twitter_url, :target => "_blank" %>
                                                                 <% end %>
                                                                 <% unless Maktoub.facebook_url.blank? %>
                                                                   |
-                                                                  <%= link_to 'friend on Facebook', Maktoub.facebook_url, :target => "_blank" %>
+                                                                  <%= link_to 'Facebook', Maktoub.facebook_url, :target => "_blank" %>
                                                                 <% end %>
                                                                 <% unless Maktoub.google_plus_url.blank? %>
                                                                   |
-                                                                  <%= link_to 'follow on Google+', Maktoub.google_plus_url, :target => "_blank" %>
+                                                                  <%= link_to 'Google+', Maktoub.google_plus_url, :target => "_blank" %>
+                                                                <% end %>
+                                                                <% unless Maktoub.linkedin_url.blank? %>
+                                                                  |
+                                                                  <%= link_to 'LinkedIn', Maktoub.linkedin_url, :target => "_blank" %>
                                                                 <% end %>
                                                                 &nbsp;
                                                             </div>
