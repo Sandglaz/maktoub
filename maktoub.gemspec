@@ -7,10 +7,11 @@ require "maktoub/version"
 Gem::Specification.new do |s|
   s.name        = "maktoub"
   s.version     = Maktoub::VERSION
-  s.authors     = ["Zaid Zawaideh"]
+  s.authors     = ["Zaid Zawaideh","Nada Aldahleh"]
   s.homepage    = "http://www.sandglaz.com"
   s.summary     = "A simple newsletter engine for rails."
   s.description = "A simple newsletter engine for rails."
+  s.license     = 'MIT'
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
