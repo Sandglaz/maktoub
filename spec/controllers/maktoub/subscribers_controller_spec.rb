@@ -1,9 +1,12 @@
 require 'spec_helper'
 
-describe Maktoub::SubscribersController do
+describe Maktoub::SubscribersController, :type => :controller do
+	before(:each) do
+		@routes = Maktoub::Engine.routes
+	end
 	describe "GET 'edit'" do
 		it "should get show" do
-			get :edit, :use_route => 'maktoub'
+			get :edit
 			assert_response :success
 			assert_template 'subscribers/edit'
 		end
@@ -19,30 +22,30 @@ describe Maktoub::SubscribersController do
 			end
 		end
 		it "should be successful" do
-			put :update, :use_route => 'maktoub', :email => 'subscriber2@example.com'
-			response.should be_success
+			put :update, :email => 'subscriber2@example.com'
+			expect(response).to be_success
 		end
 		
 		it "should remove the subscriber for the returned list" do
-			put :update, :use_route => 'maktoub', :email => 'subscriber2@example.com'
+			put :update, :email => 'subscriber2@example.com'
 			Maktoub.subscribers.each do |s|
-				s.email.should_not == 'subscriber2@example.com'
+				expect(s.email).not_to eql 'subscriber2@example.com'
 			end
 		end
 		
 		it "should still be successful when email doesn't exist" do
-			put :update, :use_route => 'maktoub', :email => 'blablabla@example.com'
-			response.should be_success
+			put :update, :email => 'blablabla@example.com'
+			expect(response).to be_success
 		end
 		
 		it "should render subscribers/unsubscribe_successful" do
-			put :update, :use_route => 'maktoub', :email => 'subscriber2@example.com'
-			response.should render_template 'subscribers/update'
+			put :update, :email => 'subscriber2@example.com'
+			expect(response).to render_template 'subscribers/update'
 		end
 		
 		it "should require an email" do
-			put :update, :use_route => 'maktoub'
-			response.status.should == 400
+			put :update
+			expect(response.status).to eql 400
 		end
 	end
 end

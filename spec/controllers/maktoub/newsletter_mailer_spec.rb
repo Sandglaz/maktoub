@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe Maktoub::NewsletterMailer do
+describe Maktoub::NewsletterMailer, :type => :controller do
   before(:each) do
+    @routes = Maktoub::Engine.routes
     @mailer = Maktoub::NewsletterMailer.publish('test_template', email: 'zaid@example.com', name: 'zaid')
-
   end
   it "should have the right subject recipient and sender" do
     assert_equal "Test Template", @mailer.subject

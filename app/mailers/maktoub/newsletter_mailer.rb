@@ -13,8 +13,7 @@ module Maktoub
       @email = params[:email]
       @newsletter_name = newsletter_name
       mail_fields = {
-        subject: @subject,
-        to: params[:email]
+        
       }
 
       premailer = Premailer.new(render("maktoub/newsletters/#{newsletter_name}").to_s,
@@ -22,10 +21,12 @@ module Maktoub
                         link_query_string: "utm_source=newsletter&utm_medium=email&utm_campaign=#{CGI::escape(@subject)}"
                       )
 
-      mail(mail_fields) do |format|
-        format.text { premailer.to_plain_text.html_safe }
-        format.html { premailer.to_inline_css.html_safe }
-      end
+      mail(
+        subject: @subject,
+        to: params[:email],
+        body: premailer.to_inline_css, 
+        content_type: "text/html"
+      )
     end
   end
 end
