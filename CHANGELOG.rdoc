@@ -1,4 +1,8 @@
 = CHANGELOG
 
+== 0.5.0
+* performance improvement when using ActiveRelation to extract subscribers.
+* Now using Rails 4 multipart email logic. Create two separate templates to send a multipart email.
+
 == 0.4.0
 * Rails 4 compatibility. For rails 3.x use the 0.3.1 version of the gem.
