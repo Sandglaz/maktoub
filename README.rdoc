@@ -12,6 +12,10 @@ Maktoub is a Ruby on Rails engine for email newsletters.
 
 Then 'bundle install'
 
+== Compatibility
+  
+Compatible with Rails 4+. For Rails 3.1+ use version 0.3.1
+
 == Usage
 
 === Configuration

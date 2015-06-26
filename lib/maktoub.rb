@@ -32,7 +32,7 @@ module Maktoub
     end
     
     def unsubscribe(email)
-      if subscribers.class == ActiveRecord::Relation 
+      if subscribers.class.respond_to?(:to_sql) #check if ActiveRecord relation
         subscribers.where(email_field => email).first.send(unsubscribe_method)
       else
         subscribers.select do |s| 

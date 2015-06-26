@@ -12,20 +12,14 @@ module Maktoub
       @subject = newsletter_name.humanize.titleize
       @email = params[:email]
       @newsletter_name = newsletter_name
-      mail_fields = {
-        
-      }
-
-      premailer = Premailer.new(render("maktoub/newsletters/#{newsletter_name}").to_s,
-                        with_html_string: true,
-                        link_query_string: "utm_source=newsletter&utm_medium=email&utm_campaign=#{CGI::escape(@subject)}"
-                      )
 
       mail(
         subject: @subject,
         to: params[:email],
-        body: premailer.to_inline_css, 
-        content_type: "text/html"
+        with_html_string: true,
+        link_query_string: "utm_source=newsletter&utm_medium=email&utm_campaign=#{CGI::escape(@subject)}",
+        template_path: 'maktoub/newsletters',
+        template_name: newsletter_name
       )
     end
   end
