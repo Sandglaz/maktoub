@@ -33,7 +33,8 @@ module Maktoub
     
     def unsubscribe(email)
       if Maktoub.subscribers.class.parents.include?(ActiveRecord) #check if ActiveRecord relation
-        subscribers.where(email_field => email).first.send(unsubscribe_method)
+        subscriber = subscribers.find_by(email_field => email)
+        subscriber.send(unsubscribe_method) if subscriber.present?
       else
         puts 'WARNING!!! Use ActiveRecord query methods to find subscribers. Falling back to iterating through subscribers array (slow!).'
         subscribers.select do |s| 
