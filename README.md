@@ -1,62 +1,69 @@
-= Maktoub
+# Maktoub
 
 Maktoub is a Ruby on Rails engine for email newsletters.
 * Write your newsletter as you would write any view (erb partial)
 * Maktoub sends your email in multipart as both html and text
 
 
-== Installation
+## Installation
 
+  ```ruby
   # Add this line to your Gemfile
   gem 'maktoub'
+  ```
 
-Then 'bundle install'
+Then `bundle install`
 
-== Compatibility
+## Compatibility
   
 Compatible with Rails 4+. For Rails 3.1+ use version 0.3.1
 
-== Usage
+## Usage
 
-=== Configuration
+### Configuration
 
-You can run 'rails generate maktoub:config' to generate the configuration file. This task creates a matkoub.rb initializer file (in config/initializer)
+You can run `rails generate maktoub:config` to generate the configuration file. This task creates a `matkoub.rb` initializer file (in config/initializer)
 Follow instructions inside the file to configure it the way you want.
 
-=== Authoring
+### Authoring
 
-Create a newsletter as a normal view partial in app/views/maktoub/newsletters/.
+Create a newsletter as a normal view partial in `app/views/maktoub/newsletters/.`
 The subject of the newsletter will be automatically deduced from the partial's name.
 
-=== Editing Styles
+### Editing Styles
 
-Create a view partial in app/views/layouts/maktoub/_styles.erb. Note that this completely overrides the styles that come with maktoub. 
+Create a view partial in `app/views/layouts/maktoub/_styles.erb`. Note that this completely overrides the styles that come with maktoub. 
 You can copy the built-in styles and override them.
 
-=== Sending messages
+### Sending messages
 Maktoub comes with two rake tasks to allow you to:
 * send a test message to the "from" address of your newsletter.
 
+  ```ruby
   rake maktoub:test['name_of_my_newsletter_partial']
+  ```
 
 * publish the newsletter to all your subscribers. If you have delayed_job installed then it will use it to deliver each email as a background job
 
-  rake maktoub:mail['name_of_my_newsletter_parial']
-
+  ```ruby
+   rake maktoub:mail['name_of_my_newsletter_parial']
+  ```
 
 Alternatively you have access to a Maktoub::NewsletterMailer ActionMailer object with a publish method
-  Maktoub::NewsletterMailer.publish('my_newsletter_partial', :name => 'User name', :email => 'user@example.com')
+  ```ruby
+   Maktoub::NewsletterMailer.publish('my_newsletter_partial', name: 'User name', email: 'user@example.com')
+  ```
 
-=== View in browser
+### View in browser
 To be able to view your newsletter in a browser add it to routes.rb.
   # mount the engine at a path of your choice.
   # you would access the newsletter at: http://example.com/newsletter/my_awesome_newletter
   mount Maktoub::Engine => "/"
 
-== Contributing
+### Contributing
 Send a pull request including documentation changes and tests. 
 
-== To do
+## TODO
 - integrate with TravisCI
 - create github page for project
 - allow management of multiple lists
