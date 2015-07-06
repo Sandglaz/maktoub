@@ -56,9 +56,9 @@ Alternatively you have access to a Maktoub::NewsletterMailer ActionMailer object
 
 ### View in browser
 To be able to view your newsletter in a browser add it to routes.rb.
-  # mount the engine at a path of your choice.
-  # you would access the newsletter at: http://example.com/newsletter/my_awesome_newletter
-  mount Maktoub::Engine => "/"
+  - mount the engine at a path of your choice.
+  - you would access the newsletter at: http://example.com/newsletter/my_awesome_newletter
+  `mount Maktoub::Engine => '/'`
 
 ### Contributing
 Send a pull request including documentation changes and tests. 
