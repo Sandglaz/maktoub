@@ -1,6 +1,7 @@
 module Maktoub
   class ArchivesController < ApplicationController
     layout 'maktoub/newsletter_mailer'
+
     def show
       @archive = true
       template = params[:newsletter] || 'readme'
@@ -8,7 +9,5 @@ module Maktoub
 
       render "maktoub/newsletters/#{template}"
     end
-
   end
 end
-
