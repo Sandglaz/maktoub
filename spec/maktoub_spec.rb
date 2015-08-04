@@ -13,7 +13,9 @@ describe Maktoub do
   end
 
   it 'unsubscribe_method' do
-    users = (1..3).map { |i| OpenStruct.new(name: "hello #{i}", email: "hello#{i}@example.com") }
+    users = (1..3).map do |i|
+      OpenStruct.new(name: "hello #{i}", email: "hello#{i}@example.com")
+    end
     Maktoub.subscribers_extractor { users }
     Maktoub.unsubscribe_method = :dummy_unsubscribe
     expect(Maktoub.subscribers.length).to eql 3
