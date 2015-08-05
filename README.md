@@ -66,7 +66,6 @@ To be able to view your newsletter in a browser add it to routes.rb.
 Send a pull request including documentation changes and tests. 
 
 ## TODO
-- integrate with TravisCI
 - create github page for project
 - allow management of multiple lists
 - allow rendering of newletter from remotely hosted views (e.g. S3)
