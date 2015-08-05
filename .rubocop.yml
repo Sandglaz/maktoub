@@ -1,0 +1,16 @@
+Documentation:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - 'Gemfile.lock'
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'lib/generators/maktoub/templates/maktoub.rb'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'log/**/*'
+    - 'spec/dummy/**/*'
+    - 'config/initializers/**/*'
+
+  RunRailsCops: true
