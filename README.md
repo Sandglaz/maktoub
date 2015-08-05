@@ -1,5 +1,7 @@
 # Maktoub
 
+[![Build Status](https://travis-ci.org/brunoocasali/maktoub.svg?branch=feature%2Ftravis-ci)](https://travis-ci.org/brunoocasali/maktoub)
+
 Maktoub is a Ruby on Rails engine for email newsletters.
 * Write your newsletter as you would write any view (erb partial)
 * Maktoub sends your email in multipart as both html and text
@@ -64,7 +66,6 @@ To be able to view your newsletter in a browser add it to routes.rb.
 Send a pull request including documentation changes and tests. 
 
 ## TODO
-- integrate with TravisCI
 - create github page for project
 - allow management of multiple lists
 - allow rendering of newletter from remotely hosted views (e.g. S3)
