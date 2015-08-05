@@ -1,0 +1,11 @@
+language: ruby
+
+rvm:
+  - 2.2.1
+
+before_script:
+  - cp spec/dummy/config/database.travis.yml spec/dummy/config/database.yml
+
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rspec spec/
