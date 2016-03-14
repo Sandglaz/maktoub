@@ -7,8 +7,11 @@ module Maktoub
     default_url_options[:host] = Maktoub.home_domain
 
     def publish(newsletter_name, params)
+      template_data = Maktoub.template_data[newsletter_name.to_sym] || {}
+
       @name = params[:name]
-      @subject = newsletter_name.humanize.titleize
+      @subject = template_data[:subject] || newsletter_name.humanize.titleize
+      @subcaption = template_data[:subcaption]
       @email = params[:email]
       @newsletter_name = newsletter_name
 

@@ -1,0 +1,11 @@
+<div mc:edit="std_footer">
+  <em>Copyright &copy; <%= Time.now.year %> <%= Maktoub.app_name %>, All rights reserved.</em>
+  <br />
+  <em>You are receiving this email because you opted in at our website <%= link_to Maktoub.home_url, Maktoub.home_url, :target => "_blank" %>.</em>
+  <br />
+  <%- unless @archive %>
+    <%# we are not including mailing addresses %>
+    <%#<br /><strong>Our mailing address is:</strong><br /> %>
+    <%#  %>
+  <%- end %>
+</div>

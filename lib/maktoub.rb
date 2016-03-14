@@ -11,7 +11,8 @@ module Maktoub
                   :logo,
                   :home_domain,
                   :app_name,
-                  :unsubscribe_method
+                  :unsubscribe_method,
+                  :template_data
 
     attr_writer :email_field, :name_field
 
@@ -46,6 +47,8 @@ module Maktoub
         run_with_array(email)
       end
     end
+
+
 
     protected
 
