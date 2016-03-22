@@ -38,7 +38,7 @@
                           <%= @template %>
                           Is this email not displaying correctly?
                           <br />
-                          <%= link_to "View it in your browser", Maktoub.newsletter_url, target: "_blank" %>.
+                          <%= link_to "View it in your browser", newsletter_url(@newsletter_name), target: "_blank" %>.
                         </div>
                       </td>
                     <%- end %>
