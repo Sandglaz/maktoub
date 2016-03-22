@@ -1,0 +1,4 @@
+Update your subscription preferences: <%= Maktoub.subscription_preferences_url %>
+<%- if Maktoub.unsubscribe_method %>
+Or click here to unsubscribe: <%= edit_subscribers_url(email: @email) %>
+<% end %>

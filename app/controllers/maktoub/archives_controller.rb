@@ -6,7 +6,7 @@ module Maktoub
 
       @archive = true
       template = params[:newsletter] || 'readme'
-      template_data = Maktoub.template_data[template.to_sym] || {}
+      template_data = Maktoub.template_data.try(template.to_sym) || {}
 
       @subject = template_data[:subject] || template.titleize
       @subcaption = template_data[:subcaption]
