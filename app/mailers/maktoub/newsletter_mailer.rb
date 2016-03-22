@@ -6,7 +6,7 @@ module Maktoub
 
     default_url_options[:host] = Maktoub.home_domain
 
-    default 'List-Unsubscribe' => Maktoub.template_data.try(newsletter_name.to_sym).try(:unsubscribe_url)
+    default 'List-Unsubscribe' => Maktoub.subscription_preferences_url
 
     def publish(newsletter_name, params)
       template_data = Maktoub.template_data.try(newsletter_name.to_sym) || {}
