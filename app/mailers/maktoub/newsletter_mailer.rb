@@ -9,7 +9,7 @@ module Maktoub
     default 'List-Unsubscribe' => Maktoub.subscription_preferences_url
 
     def publish(newsletter_name, params)
-      template_data = Maktoub.template_data.try(newsletter_name.to_sym) || {}
+      template_data = Maktoub.template_data.try(:[], newsletter_name.to_sym) || {}
 
       @name = params[:name]
       @subject = template_data[:subject] || newsletter_name.humanize.titleize
