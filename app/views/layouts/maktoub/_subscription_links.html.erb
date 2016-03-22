@@ -1,8 +1,0 @@
-<div>
-  &nbsp;
-  <%= link_to 'update subscription preferences', Maktoub.subscription_preferences_url, :target => "_blank" %>&nbsp;
-  <%- if Maktoub.unsubscribe_method %>
-    |
-    <%= link_to 'unsubscribe', edit_subscribers_url(email: @email), :target => "_blank", :rel => "nofollow" %>
-  <% end %>
-</div>

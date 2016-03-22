@@ -1,0 +1,16 @@
+(Is this email not displaying correctly? View it in your browser: <%= newsletter_url(@newsletter_name) %>)
+
+<%= yield %>
+
+----
+
+<%= render 'layouts/maktoub/footer/subscription_links' %>
+
+----
+
+Copyright ©<%= Time.now.year %> <%= Maktoub.app_name %>, All rights reserved.
+
+Facebook: <%= Maktoub.twitter_url %>
+Twitter: <%= Maktoub.facebook_url %>
+Google Plus: <%= Maktoub.google_plus_url %>
+
