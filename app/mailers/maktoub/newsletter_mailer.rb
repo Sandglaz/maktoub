@@ -2,11 +2,11 @@ require 'premailer'
 
 module Maktoub
   class NewsletterMailer < ActionMailer::Base
-    default from: Maktoub.from, parts_order: %w(text/html text/plain)
+    default from: Maktoub.from,
+            parts_order: %w(text/plain text/html),
+            'List-Unsubscribe' => Maktoub.subscription_preferences_url
 
     default_url_options[:host] = Maktoub.home_domain
-
-    default 'List-Unsubscribe' => Maktoub.subscription_preferences_url
 
     def publish(newsletter_name, params)
       template_data = Maktoub.template_data.try(:[], newsletter_name.to_sym) || {}
