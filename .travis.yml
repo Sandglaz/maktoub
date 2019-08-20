@@ -1,7 +1,7 @@
 language: ruby
 
 rvm:
-  - 2.4
+  - 2.5
 
 before_script:
   - cp spec/dummy/config/database.travis.yml spec/dummy/config/database.yml
